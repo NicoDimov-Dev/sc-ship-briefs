@@ -139,11 +139,11 @@ section{padding-block:var(--s5) 0}
 
 /* Skylark */
 .sky{background:var(--hull);margin-top:var(--s5);padding-block:0 var(--s4)}
-.sky .para{position:relative;overflow:hidden;aspect-ratio:2.33;max-height:460px;width:100%;view-timeline:--sky block}
+.sky .para{position:relative;overflow:hidden;aspect-ratio:3.2;max-height:380px;min-height:220px;width:100%;view-timeline:--sky block}
 .sky .para .zwrap{position:absolute;inset:0;overflow:hidden}
-.sky .para img{position:absolute;left:0;top:-14%;width:100%;height:128%;object-fit:cover;will-change:transform}
+.sky .para img{position:absolute;left:0;top:-25%;width:100%;height:150%;object-fit:cover;will-change:transform}
 @media (prefers-reduced-motion:no-preference){
-  @keyframes skydrift{from{transform:translate3d(0,-10%,0)}to{transform:translate3d(0,10%,0)}}
+  @keyframes skydrift{from{transform:translate3d(0,-16%,0)}to{transform:translate3d(0,16%,0)}}
   @supports (animation-timeline: view()){
     .sky .para img{animation:skydrift linear both;animation-timeline:--sky;animation-range:cover 0% cover 100%}
   }
@@ -490,7 +490,7 @@ html,body{margin:0}[hidden]{display:none!important}
       var r=box.getBoundingClientRect(), vh=window.innerHeight;
       if(r.bottom<0||r.top>vh)return;
       var p=(vh-r.top)/(vh+r.height); p=Math.max(0,Math.min(1,p));
-      img.style.transform='translate3d(0,'+(-10+20*p).toFixed(2)+'%,0)';
+      img.style.transform='translate3d(0,'+(-16+32*p).toFixed(2)+'%,0)';
     }
     function req(){if(!ticking){ticking=true;requestAnimationFrame(upd)}}
     window.addEventListener('scroll',req,{passive:true});
